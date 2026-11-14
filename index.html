@@ -112,6 +112,52 @@
   footer a{color:#fff} footer a:hover{color:var(--gold)}
   footer p{margin:0}
 
+
+  /* Paginakop */
+  .paginakop{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .paginakop svg{position:absolute;inset:0;width:100%;height:100%}
+  .paginakop .in{position:relative;max-width:1160px;margin:0 auto;padding:64px 24px 56px}
+  .paginakop h1{margin:0;font-weight:800;font-size:44px}
+  .paginakop p{margin:10px 0 0;font-size:18px;color:#E8EBF5;max-width:640px;line-height:1.6}
+  .blok{background:#fff;border-radius:16px;padding:32px;box-shadow:0 2px 14px rgba(11,33,73,.06)}
+  .blok h2{margin:0 0 12px;font-weight:800;font-size:26px;color:var(--navy)}
+  .blok p{margin:0;font-size:17px;line-height:1.7}
+  .twee{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+  /* Nieuws */
+  .nieuws{display:flex;flex-direction:column;gap:24px}
+  .bericht{background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(11,33,73,.08);overflow:hidden;display:grid;grid-template-columns:280px 1fr}
+  .bericht.zonder{grid-template-columns:1fr}
+  .bericht img{width:100%;height:100%;min-height:200px;object-fit:cover;display:block}
+  .bericht .body{padding:28px;display:flex;flex-direction:column;gap:10px}
+  .bericht h3{margin:0;font-weight:700;font-size:24px;color:var(--navy)}
+  .bericht p.t{margin:0;font-size:16px;line-height:1.7}
+  /* Foto's */
+  .galerij{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .galerij figure{margin:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(11,33,73,.08);cursor:zoom-in}
+  .galerij img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s}
+  .galerij figure:hover img{transform:scale(1.04)}
+  .galerij figcaption{padding:10px 14px;font-size:14px;color:var(--muted)}
+  .leeg{background:#fff;border:2px dashed #D6DBEC;border-radius:16px;padding:40px;text-align:center;color:var(--muted);font-size:16px}
+  .groot{position:fixed;inset:0;background:rgba(7,22,51,.92);display:flex;align-items:center;justify-content:center;z-index:50;padding:24px;cursor:zoom-out}
+  .groot img{max-width:100%;max-height:85vh;border-radius:10px}
+  .groot p{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:#fff;margin:0}
+  /* Formulier */
+  .formkader{background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(11,33,73,.08);overflow:hidden}
+  .formkader iframe{width:100%;height:1150px;border:0;display:block}
+  /* Beheer-venster */
+  .venster{position:fixed;inset:0;background:rgba(7,22,51,.7);display:flex;align-items:center;justify-content:center;z-index:60;padding:20px}
+  .venster form{background:#fff;border-radius:16px;padding:28px;width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px;color:var(--ink)}
+  .venster h2{margin:0;font-size:22px;color:var(--navy)}
+  .venster input{font:inherit;font-size:16px;padding:12px;border:1px solid #D6DBEC;border-radius:10px}
+  .venster .melding{font-size:14px;color:#B3261E;min-height:20px;margin:0}
+  .venster .knoppen2{display:flex;gap:10px;justify-content:flex-end}
+  .venster button{font:inherit;font-weight:700;border-radius:10px;padding:11px 18px;cursor:pointer;border:1px solid var(--navy);background:#fff;color:var(--navy)}
+  .venster button.ok{background:var(--gold);border-color:var(--gold)}
+  .onderbalk{border-top:1px solid rgba(255,255,255,.12)}
+  .onderbalk .in{max-width:1160px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#AEB7D0}
+  .onderbalk button{background:none;border:0;color:#AEB7D0;font:inherit;cursor:pointer;text-decoration:underline;padding:0}
+  .onderbalk button:hover{color:var(--gold)}
+
   /* Laden */
   .laden{min-height:70vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:var(--navy);font-family:Montserrat,sans-serif;font-weight:700}
   .spinner{width:42px;height:42px;border-radius:50%;border:4px solid var(--lightblue);border-top-color:var(--gold);animation:draai 1s linear infinite}
@@ -125,6 +171,11 @@
     nav.menu a{padding:14px 8px;border-bottom:1px solid rgba(255,255,255,.12)}
   }
   @media (max-width:700px){
+    .paginakop h1{font-size:32px}
+    .paginakop .in{padding:44px 20px 40px}
+    .blok{padding:22px}
+    .bericht{grid-template-columns:1fr}
+    .bericht img{min-height:180px;max-height:240px}
     .wrap{padding:48px 20px}
     .hero .in{padding:72px 20px 64px}
     .hero h1{font-size:38px}
@@ -139,18 +190,20 @@
 <body>
 <header class="top">
   <div class="in">
-    <a class="merk" href="#top"><span class="logo" id="logo" hidden></span><span>Leerlingenraad OLVA</span></a>
+    <a class="merk" href="#/"><span class="logo" id="logo" hidden></span><span>Leerlingenraad OLVA</span></a>
     <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">☰</button>
     <nav class="menu" id="menu" aria-label="Hoofdmenu">
-      <a href="#top" class="actief">Home</a>
-      <a href="#actueel">Nieuws</a>
-      <a href="#prioriteiten">Activiteiten</a>
-      <a href="#team">Over ons</a>
-      <a href="#idee">Jouw idee</a>
+      <a href="#/" data-p="">Home</a>
+      <a href="#/over-ons" data-p="over-ons">Over ons</a>
+      <a href="#/nieuws" data-p="nieuws">Nieuws</a>
+      <a href="#/activiteiten" data-p="activiteiten">Activiteiten</a>
+      <a href="#/fotos" data-p="fotos">Foto's</a>
+      <a href="#/jouw-idee" data-p="jouw-idee">Jouw idee</a>
     </nav>
   </div>
 </header>
 <main id="inhoud"><div class="laden"><div class="spinner"></div>Even laden…</div></main>
+<footer id="voet"></footer>
 
 <script>
 /* Link naar de gegevens (Google Apps Script-webapp van de leerlingenraad). */
@@ -182,12 +235,36 @@ function initialen(naam){
   return naam.split(/[\s-]+/).filter(function(w){ return w && !/^(de|van|der|den|het|en)$/.test(w); }).slice(0,3).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
 }
 
-function bouw(d){
+var DATA = null;
+var BEHEER_POST = DATA_URL.replace(/\?.*$/, '');
+
+function paginakop(titel, intro){
+  var s = '<section class="paginakop"><svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
+  for (var i=1;i<=7;i++) s += '<circle cx="1180" cy="420" r="'+(i*90)+'" fill="none" stroke="#B99A5A" stroke-opacity="'+(0.28-i*0.03).toFixed(2)+'" stroke-width="2"/>';
+  return s + '</svg><div class="in"><h1>'+txt(titel)+'</h1>'+(intro ? '<p>'+txt(intro)+'</p>' : '')+'</div></section>';
+}
+function teamGrid(d){
+  var h = '<div class="gridteam">';
+  (d.team||[]).forEach(function(m){
+    var goud = /goud/i.test(m.kleur);
+    h += '<div class="lid"><div class="av '+(goud?'goud':'blauw')+'">'
+       + (m.foto ? '<img src="'+esc(m.foto)+'" alt="'+esc(m.naam)+'" loading="lazy">' : esc(initialen(m.naam)))
+       + '</div><p class="n">'+txt(m.naam)+'</p><p class="r">'+txt(m.rol)+'</p></div>';
+  });
+  return h + '</div>';
+}
+function ideeBand(t){
+  return '<section class="idee" style="background:var(--navy);color:#fff"><div class="wrap"><div style="display:flex;flex-direction:column;gap:12px;flex:1 1 480px"><h2>'+txt(t.idee_titel)+'</h2><p>'+txt(t.idee_tekst)+'</p></div>'
+     + '<a class="btn btn-gold" href="#/jouw-idee">'+txt(t.idee_knop)+'</a></div></section>';
+}
+
+/* ---------- Pagina's ---------- */
+var PAGINAS = {};
+
+PAGINAS[''] = function(d){
   var t = d.t, h = '';
   var jv = String(t.jvwd_tonen).toLowerCase().trim() === 'ja';
-
-  // Banner
-  h += '<section class="hero" id="top">';
+  h += '<section class="hero">';
   if (t.banner_foto) h += '<div class="foto" style="background-image:url(\''+esc(t.banner_foto)+'\')"></div>';
   else {
     h += '<div class="bg"><svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1440" height="560" fill="#0B2149"/>';
@@ -195,12 +272,10 @@ function bouw(d){
     h += '</svg></div>';
   }
   h += '<div class="in"><p class="kicker">'+txt(t.banner_kicker)+'</p><h1>'+txt(t.banner_titel)+'</h1><p class="lead">'+txt(t.banner_tekst)+'</p>'
-     + '<div class="knoppen"><a class="btn btn-gold" href="'+link(t.link_idee)+'"'+doel(t.link_idee)+'>'+txt(t.idee_knop)+'</a>'
-     + '<a class="btn btn-ghost" href="'+link(t.link_activiteiten)+'"'+doel(t.link_activiteiten)+'>Activiteiten</a>'
-     + '<a class="btn btn-ghost" href="#team">Wie zijn wij?</a></div></div></section>';
-
-  // Nu actueel
-  h += '<section id="actueel" style="background:var(--cream)"><div class="wrap"><h2 class="sec">'+txt(t.actueel_titel)+'</h2><div class="grid3">';
+     + '<div class="knoppen"><a class="btn btn-gold" href="#/jouw-idee">'+txt(t.idee_knop)+'</a>'
+     + '<a class="btn btn-ghost" href="#/activiteiten">Activiteiten</a>'
+     + '<a class="btn btn-ghost" href="#/over-ons">Wie zijn wij?</a></div></div></section>';
+  h += '<section style="background:var(--cream)"><div class="wrap"><h2 class="sec">'+txt(t.actueel_titel)+'</h2><div class="grid3">';
   for (var k=1;k<=2;k++){
     var f = t['kaart'+k+'_foto'];
     h += '<article class="kaart"><div class="beeld">'
@@ -213,16 +288,12 @@ function bouw(d){
      + '<h3>'+txt(t.kaart3_titel)+'</h3><p class="t">'+txt(t.kaart3_tekst)+'</p></div>'
      + '<a class="btn btn-gold" style="align-self:flex-start;padding:13px 22px" href="'+link(t.instagram)+'" target="_blank" rel="noopener">'+txt(t.kaart3_knop)+'</a></article>';
   h += '</div></div></section>';
-
-  // Prioriteiten
-  h += '<section id="prioriteiten" style="background:var(--lightblue)"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.prio_titel)+'</h2><p class="intro">'+txt(t.prio_intro)+'</p></div><div class="grid4">';
+  h += '<section style="background:var(--lightblue)"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.prio_titel)+'</h2><p class="intro">'+txt(t.prio_intro)+'</p></div><div class="grid4">';
   for (var p=1;p<=4;p++){
     if (!t['prio'+p+'_titel']) continue;
     h += '<div class="prio"><div class="ic">'+ico(t['prio'+p+'_icoon'],'#0B2149',30)+'</div><h3>'+txt(t['prio'+p+'_titel'])+'</h3><p>'+txt(t['prio'+p+'_tekst'])+'</p></div>';
   }
   h += '</div></div></section>';
-
-  // Jullie vroegen, wij deden
   if (jv){
     h += '<section style="background:var(--cream)"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.jvwd_titel)+'</h2><p class="intro">'+txt(t.jvwd_intro)+'</p></div><div class="grid3">';
     for (var j=1;j<=3;j++){
@@ -231,40 +302,142 @@ function bouw(d){
     }
     h += '</div></div></section>';
   }
+  h += '<section style="background:'+(jv ? '#E9ECF4' : '#FAF8F3')+'"><div class="wrap"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.team_titel)+'</h2><p class="intro">'+txt(t.team_intro)+'</p></div><a href="#/over-ons" style="font-weight:600">Meer over ons →</a></div>'+teamGrid(d)+'</div></section>';
+  return h + ideeBand(t);
+};
 
-  // Team
-  h += '<section id="team" style="background:'+(jv ? '#E9ECF4' : '#FAF8F3')+'"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.team_titel)+'</h2><p class="intro">'+txt(t.team_intro)+'</p></div><div class="gridteam">';
-  (d.team||[]).forEach(function(m){
-    var goud = /goud/i.test(m.kleur);
-    h += '<div class="lid"><div class="av '+(goud?'goud':'blauw')+'">'
-       + (m.foto ? '<img src="'+esc(m.foto)+'" alt="'+esc(m.naam)+'" loading="lazy">' : esc(initialen(m.naam)))
-       + '</div><p class="n">'+txt(m.naam)+'</p><p class="r">'+txt(m.rol)+'</p></div>';
+PAGINAS['over-ons'] = function(d){
+  var t = d.t;
+  return paginakop(t.over_titel)
+    + '<section><div class="wrap"><div class="blok"><h2>'+txt(t.over_intro_titel)+'</h2><p>'+txt(t.over_intro)+'</p></div></div></section>'
+    + '<section style="background:var(--lightblue)"><div class="wrap"><h2 class="sec">'+txt(t.over_team_titel)+'</h2>'+teamGrid(d)+'</div></section>'
+    + '<section><div class="wrap"><div class="twee">'
+    + '<div class="blok"><h2>'+txt(t.over_schoolraad_titel)+'</h2><p>'+txt(t.over_schoolraad)+'</p></div>'
+    + '<div class="blok"><h2>'+txt(t.over_contact_titel)+'</h2><p>'+txt(t.over_contact)+'</p>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px"><a class="btn btn-gold" style="padding:12px 20px" href="mailto:'+esc(t.voet_mail)+'">Mail ons</a>'
+    + '<a class="btn" style="padding:10px 18px;border:2px solid var(--navy)" href="'+link(t.instagram)+'" target="_blank" rel="noopener">Instagram</a></div></div>'
+    + '</div></div></section>' + ideeBand(t);
+};
+
+PAGINAS['nieuws'] = function(d){
+  var t = d.t, h = paginakop(t.nieuws_titel, t.nieuws_intro) + '<section><div class="wrap"><div class="nieuws">';
+  if (!(d.nieuws||[]).length) h += '<div class="leeg">Nog geen nieuws. Kom binnenkort terug!</div>';
+  (d.nieuws||[]).forEach(function(n){
+    h += '<article class="bericht'+(n.foto ? '' : ' zonder')+'">'+(n.foto ? '<img src="'+esc(n.foto)+'" alt="'+esc(n.titel)+'" loading="lazy">' : '')
+       + '<div class="body">'+(n.datum ? '<p class="label">'+txt(n.datum)+'</p>' : '')+'<h3>'+txt(n.titel)+'</h3><p class="t">'+txt(n.tekst)+'</p></div></article>';
   });
-  h += '</div></div></section>';
+  return h + '</div></div></section>' + ideeBand(t);
+};
 
-  // Idee
-  h += '<section class="idee" id="idee" style="background:var(--navy);color:#fff"><div class="wrap"><div style="display:flex;flex-direction:column;gap:12px;flex:1 1 480px"><h2>'+txt(t.idee_titel)+'</h2><p>'+txt(t.idee_tekst)+'</p></div>'
-     + '<a class="btn btn-gold" href="'+link(t.link_idee)+'"'+doel(t.link_idee)+'>'+txt(t.idee_knop)+'</a></div></section>';
+PAGINAS['activiteiten'] = function(d){
+  var t = d.t, h = paginakop(t.act_titel)
+    + '<section><div class="wrap"><div class="blok"><h2>'+txt(t.act_intro_titel)+'</h2><p>'+txt(t.act_intro)+'</p></div><div class="grid3">';
+  (d.activiteiten||[]).forEach(function(a){
+    h += '<article class="kaart"><div class="beeld">'
+       + (a.foto ? '<img src="'+esc(a.foto)+'" alt="'+esc(a.titel)+'" loading="lazy">' : bogen('#0B2149',0.10) + ico(a.icoon||'ster','#0B2149',80,'ico'))
+       + '</div><div class="body">'+(a.wanneer ? '<p class="label">'+txt(a.wanneer)+'</p>' : '')+'<h3>'+txt(a.titel)+'</h3><p class="t">'+txt(a.tekst)+'</p></div></article>';
+  });
+  h += '</div><div class="blok" style="background:var(--lightblue);box-shadow:none"><h2>'+txt(t.act_info_titel)+'</h2><p>'+txt(t.act_info)+'</p></div></div></section>';
+  return h + ideeBand(t);
+};
 
-  // Voettekst
-  h += '<footer><div class="wrap"><div><p class="mont" style="font-weight:700;font-size:17px;color:#fff">'+txt(t.voet_naam)+'</p><p>'+txt(t.voet_adres)+'</p></div>'
+PAGINAS['fotos'] = function(d){
+  var t = d.t, fotos = d.fotos || [];
+  var h = paginakop(t.foto_titel) + '<section><div class="wrap"><div class="blok"><h2>'+txt(t.foto_intro_titel)+'</h2><p>'+txt(t.foto_intro)+'</p></div>';
+  if (!fotos.length) h += '<div class="leeg">De eerste foto\'s komen hier binnenkort.</div>';
+  var jaren = [];
+  fotos.forEach(function(f){ var j = f.schooljaar || ''; if (jaren.indexOf(j) < 0) jaren.push(j); });
+  jaren.forEach(function(j){
+    if (j) h += '<h2 class="sec" style="font-size:26px">Schooljaar '+txt(j)+'</h2>';
+    h += '<div class="galerij">';
+    fotos.forEach(function(f, i){ if ((f.schooljaar||'') !== j || !f.foto) return;
+      h += '<figure data-i="'+i+'"><img src="'+esc(f.foto)+'" alt="'+esc(f.bijschrift||'Foto leerlingenraad')+'" loading="lazy">'+(f.bijschrift ? '<figcaption>'+txt(f.bijschrift)+'</figcaption>' : '')+'</figure>';
+    });
+    h += '</div>';
+  });
+  return h + '<p style="margin:0;font-size:14px;color:var(--muted);line-height:1.6">'+txt(t.foto_privacy)+'</p></div></section>';
+};
+
+PAGINAS['jouw-idee'] = function(d){
+  var t = d.t, f = String(t.formulier || '');
+  var emb = f ? f.replace(/\/viewform.*$/, '/viewform') + (f.indexOf('?') > -1 ? '&' : '?') + 'embedded=true' : '';
+  return paginakop(t.jouwidee_titel)
+    + '<section><div class="wrap"><div class="blok"><h2>'+txt(t.jouwidee_kop)+'</h2><p>'+txt(t.jouwidee_tekst)+'</p>'
+    + (f ? '<p style="margin-top:18px"><a class="btn btn-gold" style="padding:12px 20px" href="'+link(f)+'" target="_blank" rel="noopener">Open het formulier in een nieuw venster</a></p>' : '')
+    + '</div>' + (emb ? '<div class="formkader"><iframe src="'+esc(emb)+'" title="Ideeënformulier" loading="lazy">Laden…</iframe></div>' : '')
+    + '</div></section>';
+};
+
+function voettekst(t){
+  return '<div class="wrap"><div><p class="mont" style="font-weight:700;font-size:17px;color:#fff">'+txt(t.voet_naam)+'</p><p>'+txt(t.voet_adres)+'</p></div>'
      + '<div><p><a href="mailto:'+esc(t.voet_mail)+'">'+txt(t.voet_mail)+'</a></p><p><a href="'+link(t.instagram)+'" target="_blank" rel="noopener">Instagram: '+txt(t.kaart3_knop)+'</a></p></div>'
-     + '<p style="max-width:340px">'+txt(t.voet_privacy)+'</p></div></footer>';
+     + '<p style="max-width:340px">'+txt(t.voet_privacy)+'</p></div>'
+     + '<div class="onderbalk"><div class="in"><span>© '+new Date().getFullYear()+' '+txt(t.voet_naam)+(t.voet_maker ? ' · '+txt(t.voet_maker) : '')+'</span><button type="button" id="beheerknop">Beheer</button></div></div>';
+}
 
-  document.getElementById('inhoud').innerHTML = h;
+function huidigePagina(){ var m = location.hash.match(/^#\/([\w-]*)/); return m ? m[1] : ''; }
+
+function toon(scrollTop){
+  if (!DATA) return;
+  var p = huidigePagina(); if (!PAGINAS[p]) p = '';
+  document.getElementById('inhoud').innerHTML = PAGINAS[p](DATA);
+  document.getElementById('voet').innerHTML = voettekst(DATA.t);
+  [].forEach.call(document.querySelectorAll('nav.menu a'), function(a){ a.classList.toggle('actief', a.getAttribute('data-p') === p); });
+  var titels = {'':'', 'over-ons':DATA.t.over_titel, 'nieuws':DATA.t.nieuws_titel, 'activiteiten':DATA.t.act_titel, 'fotos':DATA.t.foto_titel, 'jouw-idee':DATA.t.jouwidee_titel};
+  document.title = (titels[p] ? titels[p] + ' · ' : '') + 'Leerlingenraad OLVA Assebroek';
   var logo = document.getElementById('logo');
-  if (t.logo) { logo.innerHTML = '<img src="'+esc(t.logo)+'" alt="Logo leerlingenraad OLVA">'; logo.hidden = false; } else logo.hidden = true;
+  if (DATA.t.logo) { logo.innerHTML = '<img src="'+esc(DATA.t.logo)+'" alt="Logo leerlingenraad OLVA">'; logo.hidden = false; } else logo.hidden = true;
+  if (scrollTop) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', function(){ toon(true); });
+
+/* Foto groot bekijken */
+document.addEventListener('click', function(e){
+  var fig = e.target.closest && e.target.closest('.galerij figure');
+  if (fig) {
+    var f = DATA.fotos[+fig.getAttribute('data-i')];
+    var g = document.createElement('div'); g.className = 'groot';
+    g.innerHTML = '<img src="'+esc(f.foto)+'" alt="">'+(f.bijschrift ? '<p>'+txt(f.bijschrift)+'</p>' : '');
+    g.addEventListener('click', function(){ g.remove(); });
+    document.body.appendChild(g);
+  }
+  if (e.target.id === 'beheerknop') openBeheer();
+});
+
+/* Beheerknop met wachtwoord */
+function openBeheer(){
+  var v = document.createElement('div'); v.className = 'venster';
+  v.innerHTML = '<form><h2>Beheer</h2><label for="bw" style="font-size:15px">Wachtwoord</label><input id="bw" type="password" autocomplete="current-password" required>'
+    + '<p class="melding"></p><div class="knoppen2"><button type="button" class="annuleer">Annuleren</button><button type="submit" class="ok">Verder</button></div>'
+    + '<p style="margin:0;font-size:13px;color:#555;line-height:1.5">Daarna log je in met het Google-account van de leerlingenraad.</p></form>';
+  document.body.appendChild(v);
+  var form = v.querySelector('form'), inp = v.querySelector('input'), mld = v.querySelector('.melding');
+  inp.focus();
+  v.querySelector('.annuleer').addEventListener('click', function(){ v.remove(); });
+  v.addEventListener('click', function(e){ if (e.target === v) v.remove(); });
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); mld.style.color = '#555'; mld.textContent = 'Even controleren…';
+    fetch(BEHEER_POST, { method:'POST', body: JSON.stringify({ wachtwoord: inp.value }) })
+      .then(function(r){ return r.json(); })
+      .then(function(r){
+        if (r.ok) { location.href = r.url; return; }
+        mld.style.color = '#B3261E';
+        mld.textContent = r.ingesteld ? 'Dat wachtwoord klopt niet.' : 'Er is nog geen wachtwoord ingesteld (zie de handleiding).';
+        inp.select();
+      })
+      .catch(function(){ mld.style.color = '#B3261E'; mld.textContent = 'Er ging iets mis. Probeer het opnieuw.'; });
+  });
 }
 
 /* Eerst de laatst bekende versie tonen (snel), daarna de nieuwste ophalen. */
-var bewaard = null;
-try { bewaard = JSON.parse(localStorage.getItem('olva-site') || 'null'); } catch (e) {}
-if (bewaard) bouw(bewaard);
+try { DATA = JSON.parse(localStorage.getItem('olva-site-2') || 'null'); } catch (e) {}
+if (DATA) toon(false);
 fetch(DATA_URL).then(function(r){ return r.json(); }).then(function(d){
-  if (!bewaard || JSON.stringify(d) !== JSON.stringify(bewaard)) bouw(d);
-  try { localStorage.setItem('olva-site', JSON.stringify(d)); } catch (e) {}
+  var oud = JSON.stringify(DATA); DATA = d;
+  if (oud !== JSON.stringify(d)) toon(false);
+  try { localStorage.setItem('olva-site-2', JSON.stringify(d)); } catch (e) {}
 }).catch(function(){
-  if (!bewaard) document.getElementById('inhoud').innerHTML = '<div class="laden">De website kon niet geladen worden. Vernieuw de pagina even.</div>';
+  if (!DATA) document.getElementById('inhoud').innerHTML = '<div class="laden">De website kon niet geladen worden. Vernieuw de pagina even.</div>';
 });
 
 /* Menu op gsm */
