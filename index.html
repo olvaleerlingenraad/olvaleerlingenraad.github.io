@@ -39,6 +39,282 @@
   .merk{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
   .merk:hover{color:#fff}
   .merk .logo{background:#fff;border-radius:10px;padding:4px 6px;display:flex;align-items:center}
+  .merk .logo[hidden]{display:none}
+  .merk .logo img{height:42px;width:auto;display:block}
+  .merk span{font-family:Montserrat,sans-serif;font-weight:700;font-size:20px;white-space:nowrap}
+  nav.menu{display:flex;flex-wrap:wrap;gap:2px}
+  nav.menu a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px;border-bottom:3px solid transparent}
+  nav.menu a:hover{border-bottom-color:var(--gold);color:#fff}
+  nav.menu a.actief{border-bottom-color:var(--gold)}
+  .hamburger{display:none;background:none;border:2px solid rgba(255,255,255,.6);color:#fff;border-radius:8px;width:44px;height:44px;font-size:20px;cursor:pointer}
+
+  /* Banner */
+  .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0}
+  .hero .bg svg{width:100%;height:100%}
+  .hero .foto{position:absolute;inset:0;background-size:cover;background-position:center}
+  .hero .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,33,73,.78),rgba(11,33,73,.88))}
+  .hero .in{position:relative;max-width:1160px;margin:0 auto;padding:120px 24px 104px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+  .kicker{margin:0;font-family:Montserrat,sans-serif;font-weight:700;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+  .hero h1{margin:0;font-weight:800;font-size:56px;line-height:1.1;max-width:820px}
+  .hero p.lead{margin:0;font-size:19px;line-height:1.6;max-width:640px;color:#E8EBF5}
+  .knoppen{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:12px}
+
+  /* Kaarten */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .kaart{background:#fff;border-radius:16px;box-shadow:0 2px 14px rgba(11,33,73,.08);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .kaart:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(11,33,73,.14)}
+  .kaart .beeld{height:180px;background:#E9ECF4;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .kaart .beeld img{width:100%;height:100%;object-fit:cover;display:block}
+  .kaart .beeld svg.ico{position:relative}
+  .kaart .beeld svg.bogen{position:absolute;inset:0;width:100%;height:100%}
+  .kaart .body{padding:24px;display:flex;flex-direction:column;gap:10px}
+  .label{margin:0;font-size:13px;font-weight:600;color:#6B5414;text-transform:uppercase;letter-spacing:1px}
+  .kaart h3{margin:0;font-weight:700;font-size:22px;color:var(--navy)}
+  .kaart p.t{margin:0;font-size:16px;line-height:1.6}
+  .kaart.blauw{background:var(--navy);color:#fff;padding:28px;justify-content:space-between;gap:18px}
+  .kaart.blauw h3{color:#fff}
+  .kaart.blauw p.t{color:#E8EBF5}
+
+  /* Prioriteiten */
+  .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .prio{background:#fff;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .2s,box-shadow .2s}
+  .prio:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,33,73,.10)}
+  .prio .ic{width:52px;height:52px;border-radius:14px;background:var(--lightblue);display:flex;align-items:center;justify-content:center}
+  .prio h3{margin:0;font-weight:700;font-size:19px;color:var(--navy)}
+  .prio p{margin:0;font-size:15px;line-height:1.6}
+
+  /* Jullie vroegen */
+  .jv{background:#fff;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px;border:1px solid #E3E1DA}
+  .jv .k{margin:0;font-size:13px;font-weight:600;color:#5C5A55;text-transform:uppercase;letter-spacing:1px}
+  .jv .k.g{color:#6B5414;margin-top:6px}
+  .jv .v{margin:0;font-size:17px;font-weight:600;color:var(--navy)}
+  .jv .a{margin:0;font-size:16px;line-height:1.6}
+
+  /* Team */
+  .gridteam{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .lid{background:#fff;border-radius:16px;padding:22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:0 2px 14px rgba(11,33,73,.08)}
+  .av{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Montserrat,sans-serif;font-weight:700;font-size:30px;box-shadow:0 0 0 4px #fff,0 0 0 6px var(--gold);overflow:hidden}
+  .av.blauw{background:var(--navy);color:#fff}
+  .av.goud{background:var(--gold);color:var(--navy);box-shadow:0 0 0 4px #fff,0 0 0 6px var(--navy)}
+  .av img{width:100%;height:100%;object-fit:cover}
+  .lid .n{margin:6px 0 0;font-family:Montserrat,sans-serif;font-weight:700;font-size:17px;color:var(--navy)}
+  .lid .r{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+
+  /* Idee */
+  .idee .wrap{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .idee h2{margin:0;font-weight:800;font-size:36px}
+  .idee p{margin:0;font-size:17px;line-height:1.6;color:#E8EBF5;max-width:600px}
+  .idee .btn-gold{font-size:18px;padding:18px 32px;border-radius:12px}
+
+  footer{background:#071633;color:#D6DBEC}
+  footer .wrap{padding:44px 24px;flex-direction:row;flex-wrap:wrap;justify-content:space-between;gap:28px;font-size:15px;line-height:1.7}
+  footer a{color:#fff} footer a:hover{color:var(--gold)}
+  footer p{margin:0}
+
+  /* Laden */
+  .laden{min-height:70vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:var(--navy);font-family:Montserrat,sans-serif;font-weight:700}
+  .spinner{width:42px;height:42px;border-radius:50%;border:4px solid var(--lightblue);border-top-color:var(--gold);animation:draai 1s linear infinite}
+  @keyframes draai{to{transform:rotate(360deg)}}
+
+  @media (max-width:900px){
+    .gridteam{grid-template-columns:repeat(2,1fr)}
+    .hamburger{display:block}
+    nav.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--navy);flex-direction:column;padding:8px 16px 16px;box-shadow:0 8px 16px rgba(0,0,0,.2)}
+    nav.menu.open{display:flex}
+    nav.menu a{padding:14px 8px;border-bottom:1px solid rgba(255,255,255,.12)}
+  }
+  @media (max-width:700px){
+    .wrap{padding:48px 20px}
+    .hero .in{padding:72px 20px 64px}
+    .hero h1{font-size:38px}
+    .hero p.lead{font-size:17px}
+    h2.sec,.idee h2{font-size:28px}
+    .merk span{font-size:17px}
+    .merk .logo img{height:34px}
+  }
+  @media (max-width:520px){ .gridteam{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="in">
+    <a class="merk" href="#top"><span class="logo" id="logo" hidden></span><span>Leerlingenraad OLVA</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">☰</button>
+    <nav class="menu" id="menu" aria-label="Hoofdmenu">
+      <a href="#top" class="actief">Home</a>
+      <a href="#actueel">Nieuws</a>
+      <a href="#prioriteiten">Activiteiten</a>
+      <a href="#team">Over ons</a>
+      <a href="#idee">Jouw idee</a>
+    </nav>
+  </div>
+</header>
+<main id="inhoud"><div class="laden"><div class="spinner"></div>Even laden…</div></main>
+
+<script>
+/* Link naar de gegevens (Google Apps Script-webapp van de leerlingenraad). */
+var DATA_URL = 'https://script.google.com/macros/s/AKfycbyfIAwvB_MeBGkpDZPqSE3tPZt6FzDi5qBR7NlCxpY5Dm7hz2hLrzXHIUgCxmEjAwKo1g/exec?p=json';
+
+var ICON = {
+  megafoon:'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6a8 8 0 0 1 0 12"/>',
+  donut:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/>',
+  mensen:'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M14 15.5c.6-.3 1.3-.5 2-.5 3 0 6 2 6 5"/>',
+  krant:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+  ster:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  hart:'<path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/>',
+  kalender:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  lamp:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  boek:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/>',
+  muziek:'<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>',
+  sport:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+  instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8"/>'
+};
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function txt(s){ return esc(s).replace(/\r?\n/g,'<br>'); }
+function ico(naam, kleur, maat, cls){ return '<svg class="'+(cls||'')+'" width="'+maat+'" height="'+maat+'" viewBox="0 0 24 24" fill="none" stroke="'+kleur+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON[naam]||ICON.ster)+'</svg>'; }
+function bogen(kleur, op){ var s='<svg class="bogen" viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'; for (var i=1;i<=6;i++) s+='<circle cx="200" cy="230" r="'+(i*42)+'" fill="none" stroke="'+kleur+'" stroke-opacity="'+op+'" stroke-width="2"/>'; return s+'</svg>'; }
+function link(u){ return esc(u || '#'); }
+function doel(u){ return /^https?:/i.test(String(u||'')) ? ' target="_blank" rel="noopener"' : ''; }
+function initialen(naam){
+  naam = String(naam).trim();
+  if (naam.indexOf('&') > -1) return naam.split('&').map(function(d){ return d.trim().charAt(0).toUpperCase(); }).join('&');
+  return naam.split(/[\s-]+/).filter(function(w){ return w && !/^(de|van|der|den|het|en)$/.test(w); }).slice(0,3).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+}
+
+function bouw(d){
+  var t = d.t, h = '';
+  var jv = String(t.jvwd_tonen).toLowerCase().trim() === 'ja';
+
+  // Banner
+  h += '<section class="hero" id="top">';
+  if (t.banner_foto) h += '<div class="foto" style="background-image:url(\''+esc(t.banner_foto)+'\')"></div>';
+  else {
+    h += '<div class="bg"><svg viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1440" height="560" fill="#0B2149"/>';
+    for (var i=1;i<=9;i++) h += '<circle cx="720" cy="760" r="'+(i*95)+'" fill="none" stroke="#B99A5A" stroke-opacity="'+(0.30-i*0.025).toFixed(3)+'" stroke-width="2"/>';
+    h += '</svg></div>';
+  }
+  h += '<div class="in"><p class="kicker">'+txt(t.banner_kicker)+'</p><h1>'+txt(t.banner_titel)+'</h1><p class="lead">'+txt(t.banner_tekst)+'</p>'
+     + '<div class="knoppen"><a class="btn btn-gold" href="'+link(t.link_idee)+'"'+doel(t.link_idee)+'>'+txt(t.idee_knop)+'</a>'
+     + '<a class="btn btn-ghost" href="'+link(t.link_activiteiten)+'"'+doel(t.link_activiteiten)+'>Activiteiten</a>'
+     + '<a class="btn btn-ghost" href="#team">Wie zijn wij?</a></div></div></section>';
+
+  // Nu actueel
+  h += '<section id="actueel" style="background:var(--cream)"><div class="wrap"><h2 class="sec">'+txt(t.actueel_titel)+'</h2><div class="grid3">';
+  for (var k=1;k<=2;k++){
+    var f = t['kaart'+k+'_foto'];
+    h += '<article class="kaart"><div class="beeld">'
+       + (f ? '<img src="'+esc(f)+'" alt="'+esc(t['kaart'+k+'_titel'])+'" loading="lazy">' : bogen('#0B2149',0.10) + ico(t['kaart'+k+'_icoon']||'ster','#0B2149',88,'ico'))
+       + '</div><div class="body">'
+       + (t['kaart'+k+'_label'] ? '<p class="label">'+txt(t['kaart'+k+'_label'])+'</p>' : '')
+       + '<h3>'+txt(t['kaart'+k+'_titel'])+'</h3><p class="t">'+txt(t['kaart'+k+'_tekst'])+'</p></div></article>';
+  }
+  h += '<article class="kaart blauw"><div style="display:flex;flex-direction:column;gap:12px">'+ico('instagram','#B99A5A',40)
+     + '<h3>'+txt(t.kaart3_titel)+'</h3><p class="t">'+txt(t.kaart3_tekst)+'</p></div>'
+     + '<a class="btn btn-gold" style="align-self:flex-start;padding:13px 22px" href="'+link(t.instagram)+'" target="_blank" rel="noopener">'+txt(t.kaart3_knop)+'</a></article>';
+  h += '</div></div></section>';
+
+  // Prioriteiten
+  h += '<section id="prioriteiten" style="background:var(--lightblue)"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.prio_titel)+'</h2><p class="intro">'+txt(t.prio_intro)+'</p></div><div class="grid4">';
+  for (var p=1;p<=4;p++){
+    if (!t['prio'+p+'_titel']) continue;
+    h += '<div class="prio"><div class="ic">'+ico(t['prio'+p+'_icoon'],'#0B2149',30)+'</div><h3>'+txt(t['prio'+p+'_titel'])+'</h3><p>'+txt(t['prio'+p+'_tekst'])+'</p></div>';
+  }
+  h += '</div></div></section>';
+
+  // Jullie vroegen, wij deden
+  if (jv){
+    h += '<section style="background:var(--cream)"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.jvwd_titel)+'</h2><p class="intro">'+txt(t.jvwd_intro)+'</p></div><div class="grid3">';
+    for (var j=1;j<=3;j++){
+      if (!t['jvwd'+j+'_vraag']) continue;
+      h += '<div class="jv"><p class="k">Jullie vroegen</p><p class="v">'+txt(t['jvwd'+j+'_vraag'])+'</p><p class="k g">Wij deden</p><p class="a">'+txt(t['jvwd'+j+'_actie'])+'</p></div>';
+    }
+    h += '</div></div></section>';
+  }
+
+  // Team
+  h += '<section id="team" style="background:'+(jv ? '#E9ECF4' : '#FAF8F3')+'"><div class="wrap"><div style="display:flex;flex-direction:column;gap:8px"><h2 class="sec">'+txt(t.team_titel)+'</h2><p class="intro">'+txt(t.team_intro)+'</p></div><div class="gridteam">';
+  (d.team||[]).forEach(function(m){
+    var goud = /goud/i.test(m.kleur);
+    h += '<div class="lid"><div class="av '+(goud?'goud':'blauw')+'">'
+       + (m.foto ? '<img src="'+esc(m.foto)+'" alt="'+esc(m.naam)+'" loading="lazy">' : esc(initialen(m.naam)))
+       + '</div><p class="n">'+txt(m.naam)+'</p><p class="r">'+txt(m.rol)+'</p></div>';
+  });
+  h += '</div></div></section>';
+
+  // Idee
+  h += '<section class="idee" id="idee" style="background:var(--navy);color:#fff"><div class="wrap"><div style="display:flex;flex-direction:column;gap:12px;flex:1 1 480px"><h2>'+txt(t.idee_titel)+'</h2><p>'+txt(t.idee_tekst)+'</p></div>'
+     + '<a class="btn btn-gold" href="'+link(t.link_idee)+'"'+doel(t.link_idee)+'>'+txt(t.idee_knop)+'</a></div></section>';
+
+  // Voettekst
+  h += '<footer><div class="wrap"><div><p class="mont" style="font-weight:700;font-size:17px;color:#fff">'+txt(t.voet_naam)+'</p><p>'+txt(t.voet_adres)+'</p></div>'
+     + '<div><p><a href="mailto:'+esc(t.voet_mail)+'">'+txt(t.voet_mail)+'</a></p><p><a href="'+link(t.instagram)+'" target="_blank" rel="noopener">Instagram: '+txt(t.kaart3_knop)+'</a></p></div>'
+     + '<p style="max-width:340px">'+txt(t.voet_privacy)+'</p></div></footer>';
+
+  document.getElementById('inhoud').innerHTML = h;
+  var logo = document.getElementById('logo');
+  if (t.logo) { logo.innerHTML = '<img src="'+esc(t.logo)+'" alt="Logo leerlingenraad OLVA">'; logo.hidden = false; } else logo.hidden = true;
+}
+
+/* Eerst de laatst bekende versie tonen (snel), daarna de nieuwste ophalen. */
+var bewaard = null;
+try { bewaard = JSON.parse(localStorage.getItem('olva-site') || 'null'); } catch (e) {}
+if (bewaard) bouw(bewaard);
+fetch(DATA_URL).then(function(r){ return r.json(); }).then(function(d){
+  if (!bewaard || JSON.stringify(d) !== JSON.stringify(bewaard)) bouw(d);
+  try { localStorage.setItem('olva-site', JSON.stringify(d)); } catch (e) {}
+}).catch(function(){
+  if (!bewaard) document.getElementById('inhoud').innerHTML = '<div class="laden">De website kon niet geladen worden. Vernieuw de pagina even.</div>';
+});
+
+/* Menu op gsm */
+var hb = document.getElementById('hamburger'), menu = document.getElementById('menu');
+hb.addEventListener('click', function(){ var open = menu.classList.toggle('open'); hb.setAttribute('aria-expanded', open); });
+menu.addEventListener('click', function(e){ if (e.target.tagName === 'A') { menu.classList.remove('open'); hb.setAttribute('aria-expanded', false); } });
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leerlingenraad OLVA Assebroek</title>
+<meta name="description" content="De leerlingenraad van het Onze-Lieve-Vrouwecollege Assebroek: nieuws, activiteiten, het team en jouw ideeën.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!--
+  Website Leerlingenraad OLVA
+  ===========================
+  Deze pagina haalt al haar teksten, foto's en het team op uit de spreadsheet
+  "Website OLVA - inhoud (niet verwijderen)" in het Google-account van de leerlingenraad.
+  Teksten aanpassen? Gebruik de BEHEERPAGINA (zie handleiding in de vault), niet dit bestand.
+-->
+<style>
+  :root{--navy:#0B2149;--navy2:#16305E;--gold:#B99A5A;--cream:#FAF8F3;--lightblue:#E9ECF4;--ink:#222;--muted:#4A4A4A}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  section{scroll-margin-top:68px}
+  html,body{margin:0;background:var(--cream)}
+  body{font-family:'Open Sans',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.mont{font-family:Montserrat,sans-serif}
+  a{color:var(--navy)} a:hover{color:#3B4C93}
+  .wrap{max-width:1160px;margin:0 auto;padding:72px 24px;display:flex;flex-direction:column;gap:28px}
+  h2.sec{margin:0;font-weight:800;font-size:34px;color:var(--navy)}
+  .intro{margin:0;font-size:17px;line-height:1.6;max-width:640px}
+  .btn{display:inline-block;text-decoration:none;font-family:Montserrat,sans-serif;font-weight:700;font-size:16px;border-radius:10px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .btn-gold{background:var(--gold);color:var(--navy);padding:15px 26px}
+  .btn-gold:hover{color:var(--navy)}
+  .btn-ghost{background:transparent;color:#fff;padding:13px 24px;border:2px solid #fff}
+  .btn-ghost:hover{color:#fff;background:rgba(255,255,255,.08)}
+
+  /* Kop + menu */
+  header.top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+  header.top .in{max-width:1160px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .merk{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  .merk:hover{color:#fff}
+  .merk .logo{background:#fff;border-radius:10px;padding:4px 6px;display:flex;align-items:center}
   .merk .logo img{height:42px;width:auto;display:block}
   .merk span{font-family:Montserrat,sans-serif;font-weight:700;font-size:20px;white-space:nowrap}
   nav.menu{display:flex;flex-wrap:wrap;gap:2px}
